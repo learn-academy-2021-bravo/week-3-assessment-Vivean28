@@ -56,6 +56,7 @@
               <Card
                 drawCard={ this.drawCard }
                 shuffle={ this.shuffle }
+                // hand={this.state.hand}
               />
             </>
           )
@@ -80,17 +81,19 @@
           }
           return(
             <>
-              <button onClick={ }>
+              <button onClick={ this.props.drowCard}>
                 Click to Draw a Card
               </button>
-              <button onClick={ shuffle }>
+              <button onClick={ this.props.shuffle }>
                 Return Cards and Shuffle Deck
               </button>
               <div style={ handStyles }>
-                { this.props.hand.map((card, index) => {
+                { this.props.hand.map((value, index) => {
                   return (
-                    <div style={ cardStyles } key={ index }>
-                      { card }
+                    <div 
+                    style={ cardStyles } 
+                    key={ index }>
+                      { value }
                     </div>
                   )
                 })}
@@ -99,7 +102,7 @@
           )
         }
       }
-
+// I think the issue here is on line 71 but I have tried so many thing and still conot figure it out. I have been looking in the notes, I have watched the video and still don't know how to solve this.
 
 
       // No need to change anything below this line
